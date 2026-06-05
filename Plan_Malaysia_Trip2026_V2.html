@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#CC0001">
+<title>🇲🇾 แผนเที่ยวมาเลเซีย 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f1f5f9;color:#18181b;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#CC0001 0%,#003478 100%);color:#fff;padding:10px 12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.ht{font-size:14px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
+.hdr-btns{display:flex;gap:6px}
+.share-btn{background:rgba(255,255,255,.2);border:none;color:#fff;font-size:11px;padding:4px 10px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.share-btn:active{background:rgba(255,255,255,.35)}
+.sync-status{font-size:10px;color:rgba(255,255,255,.75);margin:0 0 5px;text-align:right}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:7px 11px;border-radius:7px 7px 0 0;font-size:12px;font-weight:500;cursor:pointer;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);border:none;white-space:nowrap;transition:.15s}
+.tab.on{background:#fff;color:#CC0001}
+.wrap{max-width:480px;margin:0 auto}
+.scr{display:none;padding:11px}
+.scr.on{display:block}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px;margin-top:4px}
+.kc{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 1px 5px rgba(0,0,0,.06)}
+.kl{font-size:10px;color:#71717a;margin-bottom:2px}
+.kv{font-size:20px;font-weight:700}
+.ks{font-size:10px;color:#71717a;margin-top:1px}
+.sec{font-size:10px;font-weight:600;color:#71717a;text-transform:uppercase;letter-spacing:.05em;margin:13px 0 7px;display:flex;justify-content:space-between;align-items:center}
+.bcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.06);margin-bottom:11px}
+.brow{display:flex;align-items:center;padding:8px 11px;border-bottom:.5px solid #e4e4e7;gap:7px;font-size:11px}
+.brow.clickable{cursor:pointer}.brow.clickable:active{background:#f1f5f9}
+.brow:last-child{border-bottom:none}
+.brow.tot{background:linear-gradient(90deg,#CC0001,#003478);color:#fff}
+.bic{width:18px;text-align:center;flex-shrink:0}.bnm{flex:1}
+.bpl{width:54px;text-align:right;color:#71717a;font-size:10px}
+.bac{width:54px;text-align:right;font-weight:600}
+.bdf{width:48px;text-align:right;border-radius:5px;padding:1px 4px;font-size:10px}
+.dok{background:#dcfce7;color:#166534}.dov{background:#fee2e2;color:#991b1b}.dmt{color:#71717a}
+.bar-bg{margin:0 11px 7px;height:4px;background:#e4e4e7;border-radius:4px;overflow:hidden}
+.bar-f{height:100%;border-radius:4px;transition:width .4s}
+.prog{margin-bottom:9px}.ph{display:flex;justify-content:space-between;margin-bottom:3px}
+.dc{background:#fff;border-radius:10px;margin-bottom:9px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.06)}
+.dh{display:flex;align-items:center;gap:7px;padding:9px 11px;cursor:pointer;background:#f9fafb}
+.dbg{font-size:10px;font-weight:600;color:#fff;padding:2px 8px;border-radius:20px;flex-shrink:0}
+.dtit{flex:1;font-size:12px;font-weight:600;color:#18181b;line-height:1.3}
+.dm2{font-size:10px;color:#71717a}
+.di{border-top:.5px solid #e4e4e7}
+.tli{display:grid;grid-template-columns:42px 1fr;border-bottom:.5px solid #f4f4f5;position:relative}
+.tli:last-child{border-bottom:none}
+.tlt{padding:9px 5px 9px 10px;font-size:10px;font-weight:600;color:#71717a;line-height:1.3}
+.tlb{padding:9px 11px 9px 0}
+.tln{font-size:12px;line-height:1.4;margin-bottom:3px;color:#18181b}
+.cat{display:inline-block;font-size:10px;padding:1px 6px;border-radius:7px;margin-bottom:4px}
+.pc{background:#f8fafc;border:.5px solid #e2e8f0;border-radius:7px;padding:5px 8px;margin:3px 0 5px}
+.pn{font-size:11px;font-weight:600;color:#1e293b;margin-bottom:1px}
+.pm{font-size:10px;color:#64748b;margin-bottom:4px}
+.ptag{display:inline-block;font-size:9px;padding:1px 6px;border-radius:5px;margin-right:3px;margin-bottom:3px;font-weight:500}
+.mlink{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:#fff;background:#CC0001;border-radius:5px;padding:3px 8px;text-decoration:none;font-weight:500}
+.amo{display:flex;flex-direction:column;gap:4px;margin-top:5px;background:#f8fafc;padding:6px;border-radius:6px}
+.amo-row{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.pl{font-size:10px;color:#71717a}
+.ai{width:82px;padding:4px 7px;border:1.5px solid #e4e4e7;border-radius:7px;font-size:13px;text-align:right;background:#fef9c3;color:#18181b;font-family:inherit;transition:.15s}
+.ai:focus{outline:none;border-color:#CC0001;background:#fefce8}
+.ai.hv{background:#f0fdf4;border-color:#16a34a;color:#16a34a}
+.ni{width:100%;padding:5px 7px;border:1px dashed #cbd5e1;border-radius:5px;font-size:11px;background:#fff;color:#475569;box-sizing:border-box}
+.ni:focus{outline:none;border-color:#94a3b8;background:#f8fafc}
+.df{font-size:10px;font-weight:600;padding:2px 5px;border-radius:5px;min-width:36px;text-align:center}
+.ib{background:#fff8f0;border:.5px solid #fbbf24;border-radius:9px;padding:9px 11px;margin-bottom:9px;margin-top:4px;font-size:11px;color:#92400e;line-height:1.55}
+.wb{background:#fef2f2;border:.5px solid #fca5a5;border-radius:9px;padding:9px 11px;margin-bottom:9px;margin-top:4px;font-size:11px;color:#7f1d1d;line-height:1.55}
+.ib strong,.wb strong{font-weight:600;display:block;margin-bottom:3px;font-size:12px}
+.foodbox{background:#fff;border:.5px solid #fed7aa;border-radius:9px;padding:9px 11px;margin-bottom:7px}
+.foodbox-t{font-size:11px;font-weight:700;color:#c2410c;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.fooditem{display:flex;align-items:flex-start;gap:6px;padding:5px 0;border-bottom:.5px solid #fef3e2;font-size:11px}
+.fooditem:last-child{border-bottom:none}
+.foodem{font-size:14px;flex-shrink:0;margin-top:1px}
+.foodname{font-weight:600;color:#18181b}
+.fooddesc{font-size:10px;color:#71717a;margin-top:1px;line-height:1.4}
+.tip{background:#fff;border:.5px solid #e4e4e7;border-radius:9px;padding:9px 11px;margin-bottom:7px;display:flex;gap:8px}
+.tip-i{font-size:17px;flex-shrink:0}
+.tip-t{font-size:11px;font-weight:600;color:#18181b;margin-bottom:2px}
+.tip-p{font-size:10px;color:#71717a;line-height:1.5}
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);color:#fff;padding:7px 16px;border-radius:18px;font-size:11px;opacity:0;transition:.3s;pointer-events:none;z-index:400;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.toast.on{opacity:1}
+.share-panel{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;display:none;align-items:flex-end;justify-content:center}
+.share-panel.on{display:flex}
+.share-box{background:#fff;border-radius:16px 16px 0 0;padding:20px;width:100%;max-width:480px;max-height:85vh;overflow-y:auto}
+.share-box h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.share-box p{font-size:12px;color:#71717a;margin-bottom:14px;line-height:1.5}
+.share-url{width:100%;padding:9px 11px;border:1.5px solid #e4e4e7;border-radius:8px;font-size:11px;font-family:monospace;color:#18181b;background:#f9fafb;margin-bottom:10px;word-break:break-all;white-space:pre-wrap}
+.sbtn-row{display:flex;gap:8px;margin-top:10px}
+.sbtn{flex:1;padding:10px;border-radius:9px;border:.5px solid #e4e4e7;background:#f9fafb;color:#18181b;font-size:12px;font-weight:500;cursor:pointer;transition:.15s;text-align:center}
+.sbtn:active{background:#e4e4e7}
+.sbtn.primary{background:linear-gradient(135deg,#CC0001,#003478);color:#fff;border-color:transparent}
+.f-group{margin-bottom:10px}
+.f-group label{display:block;font-size:11px;font-weight:600;color:#4b5563;margin-bottom:3px}
+.f-input{width:100%;padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;font-size:13px}
+.del-btn{position:absolute;right:8px;top:8px;background:none;border:none;color:#ef4444;font-size:14px;cursor:pointer}
+.pie-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 5px rgba(0,0,0,.06);margin-bottom:11px}
+.pie-wrap{display:flex;gap:12px;align-items:center}
+.pie{width:128px;height:128px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 14px rgba(255,255,255,.55)}
+.pie-legend{display:flex;flex-direction:column;gap:6px;flex:1}
+.pie-row{display:grid;grid-template-columns:10px 1fr auto;gap:6px;align-items:center;font-size:10px;color:#3f3f46}
+.pie-dot{width:9px;height:9px;border-radius:50%}
+.pie-total{font-size:12px;font-weight:700;color:#18181b;margin-bottom:8px}
+.cat-detail-list{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.cat-day{font-size:10px;font-weight:700;color:#71717a;margin:8px 0 2px}
+.cat-item{border:1px solid #e4e4e7;border-radius:8px;padding:8px;background:#fff}
+.cat-item-top{display:flex;justify-content:space-between;gap:8px;font-size:11px;font-weight:600;color:#18181b;line-height:1.35}
+.cat-item-sub{display:flex;justify-content:space-between;gap:8px;margin-top:5px;font-size:10px;color:#71717a}
+.cat-note{font-size:10px;color:#64748b;margin-top:4px;line-height:1.4}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="ht">
+    <span>🇲🇾 แผนเที่ยวมาเลเซีย 2026</span>
+    <div class="hdr-btns">
+      <button class="share-btn" onclick="openEditor()">✏️ แก้ไขแผน</button>
+      <button class="share-btn" onclick="openShare()">📤 แชร์</button>
+    </div>
+  </div>
+  <div class="sync-status" id="sync-status">บันทึกในเครื่อง · MYR 1 = ฿8.0</div>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-t="db">📊 สรุป</button>
+    <button class="tab" data-t="d1">วัน 1 ✈</button>
+    <button class="tab" data-t="d2">วัน 2 🏙</button>
+    <button class="tab" data-t="d3">วัน 3 🚌</button>
+    <button class="tab" data-t="d4">วัน 4 🌊</button>
+    <button class="tab" data-t="d5">วัน 5 ⚠️</button>
+    <button class="tab" data-t="food">🍜 อาหาร</button>
+    <button class="tab" data-t="tips">🗺 เคล็ดลับ</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- DASHBOARD -->
+<div id="scr-db" class="scr on">
+  <div class="kg">
+    <div class="kc"><div class="kl">งบวางแผนรวม</div><div class="kv" id="kp" style="color:#CC0001">฿0</div><div class="ks">ทั้งทริป 5 วัน 4 คืน</div></div>
+    <div class="kc"><div class="kl">จ่ายจริง (รวม)</div><div class="kv" id="ka" style="color:#16a34a">฿0</div><div class="ks" id="kas">ยังไม่ได้กรอก</div></div>
+    <div class="kc"><div class="kl">ส่วนต่าง</div><div class="kv" id="kd" style="color:#d97706">–</div><div class="ks">จ่ายจริง−แผน</div></div>
+    <div class="kc"><div class="kl">กรอกแล้ว</div><div class="kv" id="kn" style="color:#CC0001">0/0</div><div class="ks">รายการ</div></div>
+  </div>
+  <div class="sec">งบแยกหมวด</div>
+  <div class="bcard" id="btbl"></div>
+  <div class="sec">กราฟค่าใช้จ่ายจริง</div>
+  <div id="expense-pie"></div>
+  <div class="sec">ความคืบหน้าแต่ละวัน</div>
+  <div id="dprog"></div>
+</div>
+
+<!-- DAY 1 -->
+<div id="scr-d1" class="scr">
+  <div class="wb"><strong>✈ วัน 1 — 25 ก.ค. ออกตี 4 → บิน DMK→KUL → เที่ยว KL แรก</strong>ชลบุรี → ดอนเมือง ตี 4 | AirAsia ออก 10:00 ถึง 13:15 (GMT+8)<br>🏨 Hotel Transit KL · เช็คอิน 15:00 น.</div>
+  <div id="items-d1"></div>
+</div>
+
+<!-- DAY 2 -->
+<div id="scr-d2" class="scr">
+  <div class="ib"><strong>🏙 วัน 2 — 26 ก.ค. เที่ยว KL Full Day</strong>🛕 Batu Caves (ตี 6!) → 🏙 Petronas Twin Towers → 🎨 Petaling Street/Chinatown<br>🌃 คืนนี้: Jalan Alor Night Street Food — ถนนสุดฮอต!</div>
+  <div id="items-d2"></div>
+</div>
+
+<!-- DAY 3 -->
+<div id="scr-d3" class="scr">
+  <div class="ib"><strong>🚌 วัน 3 — 27 ก.ค. KL → ปีนัง</strong>เช็คเอาต์ก่อน 12:00 · รถบัส KL → Penang ~4.5 ชม.<br>🏨 ZOOM HOTEL Penang · เช็คอิน 15:00 · 🌃 Gurney Drive เย็นนี้</div>
+  <div id="items-d3"></div>
+</div>
+
+<!-- DAY 4 -->
+<div id="scr-d4" class="scr">
+  <div class="ib"><strong>🌊 วัน 4 — 28 ก.ค. เที่ยวปีนัง Full Day ⭐</strong>🎨 Georgetown Mural Art → 🛕 Kek Lok Si Temple → ⛰ Penang Hill → 🌃 Kimberly Street Night Market<br>วันนี้แน่นมาก เต็มที่เลย!</div>
+  <div id="items-d4"></div>
+</div>
+
+<!-- DAY 5 -->
+<div id="scr-d5" class="scr">
+  <div class="wb"><strong>⚠️ วัน 5 — 29 ก.ค. บินกลับ PEN→DMK</strong>✈ AirAsia PEN → DMK · ออก 18:55 ถึง 19:25 (GMT+7)<br>⏰ เช็คเอาต์ก่อน 12:00 · ยังมีเวลาเที่ยวครึ่งวัน · ถึงสนามบินก่อน 16:55!</div>
+  <div id="items-d5"></div>
+</div>
+
+<!-- FOOD TAB -->
+<div id="scr-food" class="scr">
+  <div class="sec" style="margin-top:4px">🍜 อาหารต้องกินใน KL</div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🌃 Jalan Alor — ถนนกินดื่มสุดฮอต KL</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">Bukit Bintang · เปิด ~18:00–01:00 · <a href="http://maps.google.com/?q=3.1455,101.7100" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🦑</div><div><div class="foodname">ปลาหมึกย่างถ่าน + กุ้งเผา</div><div class="fooddesc">เผาสดๆ หน้าร้าน ควันหอม หาดูไม่ได้ที่ไหน ~MYR 30-50</div></div></div>
+    <div class="fooditem"><div class="foodem">🍢</div><div><div class="foodname">Satay ไก่/เนื้อ</div><div class="fooddesc">ไม้ย่างกลิ่นหอม ราดซอสถั่ว ~MYR 8-12 / 10 ไม้</div></div></div>
+    <div class="fooditem"><div class="foodem">🍜</div><div><div class="foodname">Char Kway Teow (ผัดหมี่)</div><div class="fooddesc">เส้นแบนผัดไฟแรง กุ้ง หอย ถั่วงอก ต้นตำรับ ~MYR 8-12</div></div></div>
+    <div class="fooditem"><div class="foodem">🍵</div><div><div class="foodname">Teh Tarik (ชาร้อนชัก)</div><div class="fooddesc">เทซ้ำไปมาจนฟู เป็นเอกลักษณ์มาเลฯ ~MYR 2-3</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🕌 Kampung Baru — หมู่บ้านมาเลย์กลาง KL</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">ใกล้ KLCC · <a href="http://maps.google.com/?q=3.1624,101.7002" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🍚</div><div><div class="foodname">Nasi Lemak (ข้าวมันมะพร้าว)</div><div class="fooddesc">ข้าวหุงกะทิ + แกงไก่/ปลา + ไข่ + ถั่ว คลาสสิกมาเลย์แท้ ~MYR 5-10</div></div></div>
+    <div class="fooditem"><div class="foodem">🍞</div><div><div class="foodname">Roti Canai (โรตีแกงกะหรี่)</div><div class="fooddesc">แผ่นแป้งทอดฟู ทานกับแกงดาล ~MYR 2-4 อาหารเช้าดีสุด!</div></div></div>
+    <div class="fooditem"><div class="foodem">🥩</div><div><div class="foodname">Beef Rendang (แกงแห้งเนื้อ)</div><div class="fooddesc">เนื้อตุ๋นเครื่องแกงจนแห้ง เข้มข้นมาก ~MYR 12-18</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🐷 Bak Kut Teh — ซุปกระดูกหมูชื่อดัง</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">Sun Fong BKT (ก่อตั้ง 1971) · <a href="http://maps.google.com/?q=3.1530,101.6930" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🍲</div><div><div class="foodname">Bak Kut Teh (ซุปกระดูกหมู)</div><div class="fooddesc">ซุปสมุนไพรเข้มข้น กระดูกหมูตุ๋นนุ่ม ทานกับข้าวขาว + น้ำชา ~MYR 18-25</div></div></div>
+    <div class="fooditem"><div class="foodem">🥬</div><div><div class="foodname">ผักจิ้มซีอิ๊ว + เต้าหู้ทอด</div><div class="fooddesc">เครื่องเคียงขาดไม่ได้ ~MYR 4-6</div></div></div>
+  </div>
+
+  <div class="sec">🌊 อาหารต้องกินในปีนัง</div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🥣 Assam Laksa — อันดับ 1 โลก! (CNN)</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">Air Itam Market / Gurney Drive · <a href="http://maps.google.com/?q=5.4050,100.3120" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🐟</div><div><div class="foodname">Penang Assam Laksa</div><div class="fooddesc">น้ำซุปปลาเปรี้ยว-เผ็ด (มะขาม) เส้นหนา บนหน้าด้วยหัวหอม สับปะรด สะระแหน่ ~MYR 6-8 ต้องกินก่อนตาย!</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🍜 Char Kway Teow ปีนัง — ต้นตำรับแท้</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">Sin Hwa Café / Kimberly Street · <a href="http://maps.google.com/?q=5.4163,100.3302" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🔥</div><div><div class="foodname">Char Kway Teow ปีนัง</div><div class="fooddesc">ผัดด้วยเตาถ่านไฟแรง กุ้งสด หอยแมลงภู่ ใส่ไข่ duck egg ดีกว่า KL มาก! ~MYR 8-12</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🍧 Cendol + ของหวาน</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">Penang Road Famous Teochew Cendol (ก่อตั้ง 1936) · <a href="http://maps.google.com/?q=5.4171,100.3343" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🍃</div><div><div class="foodname">Cendol (เซนดอล)</div><div class="fooddesc">วุ้นเขียวใส่น้ำกะทิ + น้ำตาลมะพร้าว + น้ำแข็งไส เย็นฉ่ำมาก ~MYR 4-5</div></div></div>
+    <div class="fooditem"><div class="foodem">🍌</div><div><div class="foodname">Pisang Goreng (กล้วยทอด)</div><div class="fooddesc">กล้วยชุบแป้งทอดกรอบ ทานร้อนๆ ดีที่สุด ~MYR 1-2</div></div></div>
+    <div class="fooditem"><div class="foodem">🍚</div><div><div class="foodname">Hainanese Chicken Rice Ball</div><div class="fooddesc">ข้าวปั้นกลมๆ ทานกับไก่ต้มนุ่ม เอกลักษณ์ปีนัง ~MYR 8-12</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">🌙 Gurney Drive Hawker Centre — สวรรค์อาหารค่ำ</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">เปิด 15:00–24:00 · <a href="http://maps.google.com/?q=5.4370,100.3078" target="_blank" class="mlink">📍 Maps</a></div>
+    <div class="fooditem"><div class="foodem">🦪</div><div><div class="foodname">Fried Oyster Omelette (ไข่เจียวหอยนางรม)</div><div class="fooddesc">หอยสด + ไข่ + แป้งทอดกรอบ ราดซอสเปรี้ยว ~MYR 8-10</div></div></div>
+    <div class="fooditem"><div class="foodem">🍜</div><div><div class="foodname">Hokkien Mee (บะหมี่กุ้ง)</div><div class="fooddesc">ซุปกุ้งเข้มข้น บะหมี่ + กุ้ง + หมู เอกลักษณ์ปีนัง ~MYR 8-12</div></div></div>
+    <div class="fooditem"><div class="foodem">🥗</div><div><div class="foodname">Pasembur (สลัดมาเลย์)</div><div class="fooddesc">ผักหั่น + เต้าหู้ทอด + กุ้งทอด ราดซอสถั่ว หวาน-เผ็ด ~MYR 6-8</div></div></div>
+  </div>
+
+  <div class="foodbox">
+    <div class="foodbox-t">☕ Kopitiam เช้า — วัฒนธรรมเช้าปีนัง</div>
+    <div style="font-size:10px;color:#71717a;margin-bottom:6px">ทั่ว Georgetown · เปิด 06:00–11:00</div>
+    <div class="fooditem"><div class="foodem">☕</div><div><div class="foodname">Kopi O (กาแฟดำมาเลย์)</div><div class="fooddesc">กาแฟชงแบบโบราณ กลิ่นเข้มมาก ทานกับเนยนมข้นหวาน ~MYR 1.50-2.50</div></div></div>
+    <div class="fooditem"><div class="foodem">🍞</div><div><div class="foodname">Toast + Kaya Butter</div><div class="fooddesc">ขนมปังปิ้ง + แยมกายา (มะพร้าว) + เนย ทานกับไข่ดิบ 2 ฟอง ~MYR 3-5</div></div></div>
+    <div class="fooditem"><div class="foodem">🍜</div><div><div class="foodname">Wan Tan Mee (บะหมี่เกี๊ยว)</div><div class="fooddesc">Mary's stall 32 ปี! เส้นกรอบ+เกี๊ยวนุ่ม ~MYR 4-6</div></div></div>
+  </div>
+</div>
+
+<!-- TIPS TAB -->
+<div id="scr-tips" class="scr">
+  <div class="sec" style="margin-top:4px">การเดินทาง</div>
+  <div class="tip"><div class="tip-i">✈</div><div><div class="tip-t">AirAsia DMK → KUL (25 ก.ค.)</div><div class="tip-p">ออก 10:00 ถึง 13:15 (GMT+8) · บิน 2ชม. 15นาที · ออกชลบุรีตี 4 | เช็คอินออนไลน์ล่วงหน้า</div></div></div>
+  <div class="tip"><div class="tip-i">✈</div><div><div class="tip-t">AirAsia PEN → DMK (29 ก.ค.)</div><div class="tip-p">ออก 18:55 ถึง 19:25 · ถึงสนามบิน PEN ก่อน 16:55 | ฿1,672 (209 MYR)</div></div></div>
+  <div class="tip"><div class="tip-i">🚇</div><div><div class="tip-t">KL: KLIA Ekspres + MRT/LRT</div><div class="tip-p">KLIA2 → KL Sentral ~30 นาที ~MYR 55 | ซื้อ Touch 'n Go eWallet ใช้ MRT/LRT/บัสได้ทั่ว KL</div></div></div>
+  <div class="tip"><div class="tip-i">🚌</div><div><div class="tip-t">KL → Penang รถบัส</div><div class="tip-p">TBus / Aeroline ~4.5 ชม. ~MYR 35-50 | จอง busonlineticket.com | ลงที่ Butterworth → เรือเฟอร์รี่ ~MYR 1.50</div></div></div>
+  <div class="tip"><div class="tip-i">🚌</div><div><div class="tip-t">ปีนัง: Rapid Penang + Grab</div><div class="tip-p">บัส MYR 1.50-4 | Grab ราคาโอเค ~MYR 8-15 ภายในเมือง | Georgetown เดินได้ทั้งหมด!</div></div></div>
+  <div class="sec">ที่พัก</div>
+  <div class="tip"><div class="tip-i">🏨</div><div><div class="tip-t">Hotel Transit KL (25-27 ก.ค.)</div><div class="tip-p">เช็คอิน 15:00 · เช็คเอาต์ 12:00 · Queen Standard · MYR 277.30 (Booking.com)</div></div></div>
+  <div class="tip"><div class="tip-i">🏨</div><div><div class="tip-t">ZOOM HOTEL Penang (27-29 ก.ค.)</div><div class="tip-p">49 Jalan Zainal Abidin, Georgetown · เช็คอิน 15:00 · เช็คเอาต์ 12:00 · RM 234.20 (2 คืน)</div></div></div>
+  <div class="sec">ของฝากต้องซื้อ</div>
+  <div class="tip"><div class="tip-i">🛍</div><div><div class="tip-t">ของฝากปีนัง (Ghee Hiang)</div><div class="tip-p">ขนมเปี๊ยะถั่ว (Tambun Biscuit) · ขนมเปี๊ยะเผือก · Rose Cookie | ร้าน Ghee Hiang ก่อตั้ง 1856</div></div></div>
+  <div class="tip"><div class="tip-i">🍫</div><div><div class="tip-t">ของฝากทั่วไป</div><div class="tip-p">Beryl's Chocolate · Old Town White Coffee · Penang White Curry (ผงแกง) · Bak Kwa (หมูแห้ง) · นูกัตปีนัง</div></div></div>
+  <div class="tip"><div class="tip-i">💱</div><div><div class="tip-t">เงิน MYR · อัตรา ~฿8</div><div class="tip-p">แลกที่ Money Changer Chinatown KL (ดีกว่าสนามบิน) | เตรียมเงินสดไว้ — hawker ส่วนใหญ่ไม่รับบัตร</div></div></div>
+  <div class="tip"><div class="tip-i">☀️</div><div><div class="tip-t">กรกฎาคม = ร้อนชื้น + ฝนบ่าย</div><div class="tip-p">อากาศ ~32°C ชื้นมาก | พกร่ม + ครีมกันแดด SPF50+ | ดื่มน้ำเยอะๆ ฝนมักสั้นแต่หนัก</div></div></div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- MODALS -->
+<div class="share-panel" id="share-panel" onclick="closeModal(event,'share-panel')">
+  <div class="share-box">
+    <h3>📤 แชร์แผนและค่าใช้จ่าย</h3>
+    <p>ลิงก์นี้จะฝังข้อมูลทริปและยอดเงินจ่ายจริงทั้งหมด</p>
+    <div class="share-url" id="share-url">กำลังสร้างลิงก์...</div>
+    <div class="sbtn-row">
+      <button class="sbtn" onclick="document.getElementById('share-panel').classList.remove('on')">ปิด</button>
+      <button class="sbtn primary" onclick="copyShareUrl()">📋 คัดลอกลิงก์</button>
+    </div>
+  </div>
+</div>
+
+<div class="share-panel" id="category-panel" onclick="closeModal(event,'category-panel')">
+  <div class="share-box">
+    <h3 id="category-title">รายละเอียดหมวด</h3>
+    <p id="category-summary"></p>
+    <div id="category-items" class="cat-detail-list"></div>
+    <div class="sbtn-row">
+      <button class="sbtn primary" onclick="document.getElementById('category-panel').classList.remove('on')">ปิด</button>
+    </div>
+  </div>
+</div>
+
+<div class="share-panel" id="editor-panel" onclick="closeModal(event,'editor-panel')">
+  <div class="share-box">
+    <h3>✏️ จัดการแผนการเดินทาง</h3>
+    <p style="margin-bottom:8px">เพิ่มหรือแก้ไขรายการในทริปนี้</p>
+    <div class="f-group">
+      <label>เลือกวัน</label>
+      <select id="f-day" class="f-input" onchange="renderEditorItems()">
+        <option value="d1">วัน 1 (25 ก.ค.) DMK→KUL</option>
+        <option value="d2">วัน 2 (26 ก.ค.) KL Full Day</option>
+        <option value="d3">วัน 3 (27 ก.ค.) → ปีนัง</option>
+        <option value="d4">วัน 4 (28 ก.ค.) ปีนัง Full Day</option>
+        <option value="d5">วัน 5 (29 ก.ค.) บินกลับ</option>
+      </select>
+    </div>
+    <div style="border:1px solid #e4e4e7;border-radius:8px;padding:10px;max-height:40vh;overflow-y:auto;background:#f8fafc" id="editor-items-list"></div>
+    <button class="sbtn primary" style="width:100%;margin-top:10px" onclick="addNewItemRow()">➕ เพิ่มรายการใหม่</button>
+    <div class="sbtn-row">
+      <button class="sbtn" onclick="document.getElementById('editor-panel').classList.remove('on')">ยกเลิก</button>
+      <button class="sbtn primary" onclick="saveEditorChanges()">💾 บันทึก</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const MYR = 8.0;
+
+const PL = {
+  dmk:{n:'สนามบินดอนเมือง (DMK)',r:'★4.2',h:'24 ชม.',lat:13.9126,lng:100.6067,tags:[]},
+  kul:{n:'สนามบิน KLIA2 กัวลาลัมเปอร์',r:'★4.1',h:'24 ชม.',lat:2.7456,lng:101.7099,tags:[]},
+  klSentral:{n:'KL Sentral — ศูนย์กลางขนส่ง KL',r:'★4.2',h:'24 ชม.',lat:3.1342,lng:101.6860,tags:[]},
+  petronas:{n:'Petronas Twin Towers',r:'★4.6 (250K รีวิว)',h:'09:00–21:00 (ปิดจันทร์)',lat:3.1578,lng:101.7117,tags:['📸 Iconic','🎟 ~MYR 80']},
+  batucaves:{n:'Batu Caves — ถ้ำฮินดู 272 ขั้นบันได',r:'★4.5 (170K รีวิว)',h:'06:00–21:00 | เข้าฟรี!',lat:3.2379,lng:101.6840,tags:['🆓 เข้าฟรี','🐒 มีลิง','🕌 ศักดิ์สิทธิ์']},
+  central:{n:'Central Market KL — ของฝาก + งานฝีมือ',r:'★4.3 (55K รีวิว)',h:'10:00–22:00',lat:3.1435,lng:101.6957,tags:['🛍 ของฝาก','🎨 Art']},
+  bukitBintang:{n:'Bukit Bintang / Pavilion Mall',r:'★4.5 (90K รีวิว)',h:'10:00–22:00',lat:3.1488,lng:101.7131,tags:['🛍 ช้อปปิ้ง','🌃 ไนท์ไลฟ์']},
+  jalanAlor:{n:'Jalan Alor Night Food Street 🔥',r:'★4.4 (65K รีวิว)',h:'18:00–01:00',lat:3.1455,lng:101.7100,tags:['🍜 Must Eat','🌃 คืน','🔥 สุดฮอต']},
+  petaling:{n:'Petaling Street — Chinatown KL',r:'★4.2 (45K รีวิว)',h:'09:00–23:00',lat:3.1449,lng:101.6968,tags:['🎨 วัฒนธรรม','🛍 ของ','🍜 อาหาร']},
+  klTower:{n:'KL Tower — วิวกลางคืน 360°',r:'★4.4 (30K รีวิว)',h:'09:00–22:00 | ~MYR 52',lat:3.1528,lng:101.7038,tags:['📸 วิว 360°','🌃 คืนสวย']},
+  theanHou:{n:'Thean Hou Temple — วัดจีนสวยงาม',r:'★4.4 (25K รีวิว)',h:'09:00–18:00 | เข้าฟรี',lat:3.1325,lng:101.6860,tags:['🆓 เข้าฟรี','📸 สวย','🛕 วัด']},
+  kampungBaru:{n:'Kampung Baru — หมู่บ้านมาเลย์ใจกลาง KL',r:'★4.1 (8K รีวิว)',h:'ตลอดวัน',lat:3.1624,lng:101.7002,tags:['🍚 Nasi Lemak','🥩 Rendang','🕌 Authentic']},
+  blueMansion:{n:'Cheong Fatt Tze Blue Mansion 💙',r:'★4.6 (12K รีวิว)',h:'09:00–17:00 | ~MYR 17',lat:5.4179,lng:100.3366,tags:['📸 Instagram','🏛 Heritage','💙 สีฟ้า']},
+  georgeTown:{n:'Georgetown Mural Art — Street Art UNESCO',r:'★4.5 (75K รีวิว)',h:'ตลอดวัน | เข้าฟรี',lat:5.4141,lng:100.3288,tags:['🆓 เข้าฟรี','📸 ถ่ายรูป','🎨 Mural']},
+  kekLokSi:{n:'Kek Lok Si Temple — วัดพุทธใหญ่สุดในมาเลย์',r:'★4.5 (35K รีวิว)',h:'07:00–17:30 | เข้าฟรี (ลิฟต์ MYR 2)',lat:5.4003,lng:100.2735,tags:['🆓 เข้าฟรี','🛕 วัด','📸 สวย']},
+  penangHill:{n:'Penang Hill — รถรางสู่ยอดเขา วิว 360°',r:'★4.4 (60K รีวิว)',h:'06:30–23:00 | รถราง ~MYR 30',lat:5.4217,lng:100.2668,tags:['⛰ วิว 360°','🌿 เย็นสบาย','📸 สวย']},
+  clanJetties:{n:'Clan Jetties — ชุมชนบ้านน้ำโบราณ',r:'★4.3 (30K รีวิว)',h:'ตลอดวัน | เข้าฟรี',lat:5.4140,lng:100.3432,tags:['🆓 เข้าฟรี','📸 ถ่ายรูป','🏛 History']},
+  armenianSt:{n:'Armenian Street — Mural + ร้านกาแฟ',r:'★4.4 (20K รีวิว)',h:'ตลอดวัน',lat:5.4179,lng:100.3366,tags:['🎨 Mural','☕ กาแฟ','🛍 ของ']},
+  gurney:{n:'Gurney Drive Hawker Centre 🌟',r:'★4.3 (40K รีวิว)',h:'15:00–24:00',lat:5.4370,lng:100.3078,tags:['🍜 Must Eat','🌃 คืน','🌊 ริมทะเล']},
+  kimberly:{n:'Kimberly Street Night Market',r:'★4.2 (15K รีวิว)',h:'17:00–23:00',lat:5.4163,lng:100.3302,tags:['🍜 Hawker','🌃 ตลาดคืน','🔥 Hot']},
+  gheehiang:{n:'Ghee Hiang — ขนมเปี๊ยะปีนัง (ตั้งแต่ 1856!)',r:'★4.5 (10K รีวิว)',h:'08:30–18:00',lat:5.4161,lng:100.3321,tags:['🛍 ของฝาก','🥮 ขนมเปี๊ยะ','⭐ Must Buy']},
+  cendol:{n:'Penang Road Cendol (ตั้งแต่ 1936!)',r:'★4.4 (18K รีวิว)',h:'10:30–18:00 | ~MYR 4-5',lat:5.4171,lng:100.3343,tags:['🍧 เซนดอล','⭐ Must Eat','🏆 ขึ้นชื่อ']},
+  gurney2:{n:'Gurney Plaza Mall — ช้อปปิ้ง + กิน',r:'★4.3 (25K รีวิว)',h:'10:00–22:00',lat:5.4378,lng:100.3082,tags:['🛍 ช้อปปิ้ง','🍜 Food Court']},
+  zoomHotel:{n:'ZOOM HOTEL Penang ★★★★',r:'★4.0 (Booking.com)',h:'24 ชม.',lat:5.4152,lng:100.3321,tags:['🏨 ที่พัก']},
+  penAirport:{n:'สนามบินปีนัง (PEN)',r:'★4.0',h:'24 ชม.',lat:5.2977,lng:100.2768,tags:[]},
+  transitHotel:{n:'Hotel Transit Kuala Lumpur',r:'★3.8 (Booking.com)',h:'24 ชม.',lat:3.1600,lng:101.7000,tags:['🏨 ที่พัก']},
+};
+
+const CM={T:{l:'✈ตั๋ว',bg:'#fef3c7',cl:'#92400e'},H:{l:'🏨ที่พัก',bg:'#dcfce7',cl:'#14532d'},F:{l:'🍜อาหาร',bg:'#ffedd5',cl:'#7c2d12'},TR:{l:'🚆เดินทาง',bg:'#dbeafe',cl:'#1e3a8a'},S:{l:'🛍ของฝาก',bg:'#fce7f3',cl:'#831843'},A:{l:'🎟กิจกรรม',bg:'#ede9fe',cl:'#4c1d95'},W:{l:'📶เน็ต/ซิม',bg:'#e0f2fe',cl:'#0369a1'},IN:{l:'🛡️ประกัน',bg:'#e2f8ff',cl:'#085c75'},M:{l:'🧾อื่นๆ',bg:'#f4f4f5',cl:'#52525b'}};
+const CG=[{k:'T',l:'✈ ตั๋วเครื่องบิน',c:'#d97706'},{k:'H',l:'🏨 ที่พัก',c:'#16a34a'},{k:'F',l:'🍜 อาหาร',c:'#dc2626'},{k:'TR',l:'🚆 เดินทาง',c:'#2563eb'},{k:'S',l:'🛍 ของฝาก',c:'#db2777'},{k:'A',l:'🎟 กิจกรรม',c:'#7c3aed'},{k:'W',l:'📶 เน็ต/ซิม',c:'#0284c7'},{k:'IN',l:'🛡️ ประกัน',c:'#0891b2'},{k:'M',l:'🧾 อื่นๆ',c:'#71717a'}];
+
+const TICKET_OUT=1800, TICKET_RET=Math.round(209*MYR), KL_HTL=Math.round(277.30*MYR), PEN_HTL=Math.round(234.20*MYR), SIM=130, INS=170;
+
+let DEFAULT_DAYS=[
+  {id:'d1',lbl:'วัน 1',date:'25 ก.ค.',title:'✈ ออกตี 4 → บิน DMK→KUL',col:'#CC0001',items:[
+    {id:'i1_0',t:'04:00',n:'🚗 ออกจากชลบุรี → สนามบินดอนเมือง (ตี 4)',c:'TR',p:150,pl:null},
+    {id:'i1_w',t:'05:30',n:'📶 ซิมการ์ด Celcom/Maxis ซื้อที่ดอนเมือง หรือที่ KLIA2',c:'W',p:SIM,pl:null},
+    {id:'i1_in',t:'05:30',n:'🛡️ ประกันเดินทาง (คุ้มครองตลอดทริป)',c:'IN',p:INS,pl:null},
+    {id:'i1_1',t:'07:30',n:'✅ เช็คอิน + โหลดกระเป๋าที่ดอนเมือง',c:'T',p:0,pl:'dmk'},
+    {id:'i1_2',t:'10:00',n:'✈ AirAsia DMK → KUL · บิน 2ชม. 15นาที',c:'T',p:TICKET_OUT,pl:null},
+    {id:'i1_3',t:'13:15',n:'🛬 ถึง KLIA2 (GMT+8) | ผ่านด่านตรวจ + รับกระเป๋า',c:'TR',p:0,pl:'kul'},
+    {id:'i1_4',t:'13:45',n:'🚇 KLIA Ekspres → KL Sentral (~MYR 55 · 30 นาที)',c:'TR',p:Math.round(55*MYR),pl:'klSentral'},
+    {id:'i1_5',t:'14:30',n:'☕ Roti Canai + Teh Tarik มื้อแรก! (แถว KL Sentral)',c:'F',p:80,pl:null},
+    {id:'i1_6',t:'15:00',n:'🏨 เช็คอิน Hotel Transit KL (MYR 277.30 · 2 คืน)',c:'H',p:KL_HTL,pl:'transitHotel'},
+    {id:'i1_7',t:'16:00',n:'🛕 Thean Hou Temple — วัดจีนใหญ่สวยมาก (เข้าฟรี! ~30 นาที)',c:'A',p:0,pl:'theanHou'},
+    {id:'i1_8',t:'17:30',n:'🛍 Bukit Bintang + Pavilion Mall เดินสำรวจ',c:'A',p:0,pl:'bukitBintang'},
+    {id:'i1_9',t:'19:00',n:'🌃 Jalan Alor Night Food Street 🔥 (กุ้งเผา, ปลาหมึกย่าง, Satay, Teh Tarik)',c:'F',p:250,pl:'jalanAlor'},
+  ]},
+  {id:'d2',lbl:'วัน 2',date:'26 ก.ค.',title:'🏙 เที่ยว KL Full Day',col:'#003478',items:[
+    {id:'i2_0',t:'06:00',n:'🛕 Batu Caves ไปช่วงเช้า! (เข้าฟรี · บันได 272 ขั้นสีสด · มีลิง!)',c:'A',p:100,pl:'batucaves'},
+    {id:'i2_1',t:'09:00',n:'🍚 Nasi Lemak เช้า แถว Kampung Baru (Authentic มาเลย์แท้!)',c:'F',p:80,pl:'kampungBaru'},
+    {id:'i2_2',t:'10:30',n:'🏙 Petronas Twin Towers ชั้น 86 (จอง online ล่วงหน้า ~MYR 80)',c:'A',p:Math.round(80*MYR),pl:'petronas'},
+    {id:'i2_3',t:'12:30',n:'🍜 อาหารกลางวัน Pavilion Food Court (เลือกหลายเมนูมาก)',c:'F',p:150,pl:null},
+    {id:'i2_4',t:'14:00',n:'🐷 Bak Kut Teh บ่าย (ซุปกระดูกหมูสมุนไพร Sun Fong ★ ก่อตั้ง 1971)',c:'F',p:180,pl:null},
+    {id:'i2_5',t:'15:30',n:'🎨 Petaling Street / Chinatown — ถ่ายรูป + ของฝาก + Batik',c:'S',p:400,pl:'petaling'},
+    {id:'i2_6',t:'17:30',n:'🎨 Central Market KL — ของฝาก งานฝีมือมาเลย์',c:'S',p:300,pl:'central'},
+    {id:'i2_7',t:'19:30',n:'🌃 KL Tower ชมวิวกลางคืน 360° (~MYR 52) · Petronas สวยมากตอนกลางคืน!',c:'A',p:Math.round(52*MYR),pl:'klTower'},
+  ]},
+  {id:'d3',lbl:'วัน 3',date:'27 ก.ค.',title:'🚌 KL → ปีนัง',col:'#15803d',items:[
+    {id:'i3_1',t:'07:00',n:'☕ อาหารเช้าสุดท้ายใน KL — ลอง Wan Tan Mee หรือ Char Kway Teow',c:'F',p:80,pl:null},
+    {id:'i3_2',t:'09:00',n:'🛍 ช้อปสุดท้าย Beryl\'s Chocolate + ของฝาก KL',c:'S',p:300,pl:null},
+    {id:'i3_3',t:'11:00',n:'เช็คเอาต์ Hotel Transit KL (ก่อน 12:00)',c:'H',p:0,pl:'transitHotel'},
+    {id:'i3_4',t:'12:00',n:'🚌 รถบัส KL → Butterworth/Penang (~MYR 40 · 4.5 ชม.) จอง busonlineticket.com',c:'TR',p:Math.round(40*MYR),pl:null},
+    {id:'i3_5',t:'16:30',n:'⛴ เรือเฟอร์รี่ Butterworth → Georgetown ปีนัง (~MYR 1.50 · 15 นาที)',c:'TR',p:15,pl:null},
+    {id:'i3_6',t:'17:30',n:'🏨 เช็คอิน ZOOM HOTEL Penang (RM 234.20 · 2 คืน)',c:'H',p:PEN_HTL,pl:'zoomHotel'},
+    {id:'i3_7',t:'19:00',n:'🌃 Gurney Drive Hawker Centre 🌟 (ลอง Assam Laksa, Char Kway Teow, Fried Oyster Omelette)',c:'F',p:200,pl:'gurney'},
+  ]},
+  {id:'d4',lbl:'วัน 4 ⭐',date:'28 ก.ค.',title:'🌊 ปีนัง Full Day — วันที่เต็มที่สุด!',col:'#0891b2',items:[
+    {id:'i4_0',t:'07:00',n:'☕ Kopitiam เช้า — Kopi O + Toast Kaya + Wan Tan Mee (วัฒนธรรมเช้าปีนัง)',c:'F',p:60,pl:null},
+    {id:'i4_1',t:'08:00',n:'🛕 Kek Lok Si Temple — วัดพุทธใหญ่ที่สุดในมาเลย์ (เข้าฟรี! ลิฟต์ ~MYR 2)',c:'A',p:20,pl:'kekLokSi'},
+    {id:'i4_2',t:'09:30',n:'⛰ Penang Hill รถราง (เข้าแต่เช้า ก่อนคนเยอะ! ~MYR 30 · วิว 360°)',c:'A',p:Math.round(30*MYR),pl:'penangHill'},
+    {id:'i4_3',t:'11:30',n:'🎨 Georgetown Mural Art Trail — Armenian Street + Love Lane (ถ่ายรูปสวยมาก!)',c:'A',p:0,pl:'georgeTown'},
+    {id:'i4_4',t:'12:30',n:'🍧 Penang Road Cendol ⭐ (ตั้งแต่ 1936! เก่าแก่ที่สุด ~MYR 4)',c:'F',p:40,pl:'cendol'},
+    {id:'i4_5',t:'13:00',n:'🍜 Assam Laksa (อันดับ 1 CNN!) + Char Kway Teow ปีนังแท้ แถว Kimberly St.',c:'F',p:120,pl:'kimberly'},
+    {id:'i4_6',t:'14:30',n:'💙 Blue Mansion (Cheong Fatt Tze) — บ้านสีฟ้า UNESCO รูปสวยมาก (~MYR 17)',c:'A',p:Math.round(17*MYR),pl:'blueMansion'},
+    {id:'i4_7',t:'16:00',n:'⛵ Clan Jetties — ชุมชนบ้านน้ำโบราณริมทะเล (เข้าฟรี · ถ่ายรูปสวย)',c:'A',p:0,pl:'clanJetties'},
+    {id:'i4_8',t:'17:00',n:'🛍 Ghee Hiang ซื้อขนมเปี๊ยะ ★ (ของฝากขึ้นชื่อ ก่อตั้ง 1856!)',c:'S',p:400,pl:'gheehiang'},
+    {id:'i4_9',t:'19:00',n:'🌃 Kimberly Street Night Market — Hawker อาหารค่ำ (Hokkien Mee, Pasembur)',c:'F',p:200,pl:'kimberly'},
+  ]},
+  {id:'d5',lbl:'วัน 5 ⚠️',date:'29 ก.ค.',title:'✈ บินกลับ PEN→DMK',col:'#dc2626',items:[
+    {id:'i5_1',t:'08:00',n:'☕ อาหารเช้า Kopitiam + ซื้อของฝากครั้งสุดท้าย',c:'F',p:80,pl:null},
+    {id:'i5_2',t:'09:00',n:'🛍 ของฝากเพิ่ม: นูกัต, Penang White Curry, Bak Kwa, Old Town Coffee',c:'S',p:600,pl:null},
+    {id:'i5_3',t:'11:00',n:'เช็คเอาต์ ZOOM HOTEL (ก่อน 12:00) — ฝากกระเป๋าที่โรงแรมไว้ก่อน',c:'H',p:0,pl:null},
+    {id:'i5_4',t:'11:30',n:'🎨 เดิน Armenian Street + Gurney Plaza รอบสุดท้าย',c:'A',p:0,pl:'armenianSt'},
+    {id:'i5_5',t:'14:00',n:'🍜 มื้อเที่ยงสุดท้ายปีนัง — Hokkien Mee หรือ Hainanese Chicken Rice Ball',c:'F',p:100,pl:null},
+    {id:'i5_6',t:'16:00',n:'🚗 Grab → สนามบินปีนัง (PEN) ~40 นาที',c:'TR',p:120,pl:'penAirport'},
+    {id:'i5_7',t:'16:55',n:'✅ เช็คอิน + Duty Free ที่ PEN (มีของฝากขายด้วย)',c:'TR',p:0,pl:null},
+    {id:'i5_8',t:'18:55',n:'✈ AirAsia PEN → DMK (209 MYR · บิน 1ชม. 30นาที)',c:'T',p:TICKET_RET,pl:null},
+    {id:'i5_9',t:'19:25',n:'🛬 ถึงดอนเมือง (GMT+7) → กลับชลบุรี',c:'TR',p:150,pl:'dmk'},
+  ]},
+];
+
+const LOCAL_PLAN_KEY='my26_plan_v3';
+const LOCAL_ACTUAL_KEY='my26_actuals_v3';
+
+function readStoredData(k,fb){try{const r=localStorage.getItem(k);return r?JSON.parse(r):fb;}catch(e){return fb;}}
+let DAYS=readStoredData(LOCAL_PLAN_KEY,DEFAULT_DAYS);
+let A=readStoredData(LOCAL_ACTUAL_KEY,{});
+
+DAYS.forEach(day=>{
+  const def=DEFAULT_DAYS.find(d=>d.id===day.id);
+  if(!def)return;
+  def.items.forEach(di=>{if(!day.items.some(i=>i.id===di.id))day.items.push(JSON.parse(JSON.stringify(di)));});
+});
+
+try{const h=location.hash.slice(1);if(h&&h.startsWith('data=')){const d=JSON.parse(fromB64(decodeURIComponent(h.slice(5))));if(d.plan){DAYS=d.plan;localStorage.setItem(LOCAL_PLAN_KEY,JSON.stringify(DAYS));}if(d.act){A=d.act;localStorage.setItem(LOCAL_ACTUAL_KEY,JSON.stringify(A));}}}catch(e){}
+
+function toB64(t){const b=new TextEncoder().encode(t);let s='';b.forEach(x=>s+=String.fromCharCode(x));return btoa(s);}
+function fromB64(t){const b=atob(t);const arr=Uint8Array.from(b,c=>c.charCodeAt(0));return new TextDecoder().decode(arr);}
+function tv(t){const m=String(t||'').match(/(\d{1,2})[:.:](\d{2})/);return m?Number(m[1])*60+Number(m[2]):9999;}
+function sortT(items){return items.map((x,i)=>({x,i,t:tv(x.t)})).sort((a,b)=>(a.t-b.t)||(a.i-b.i)).map(r=>r.x);}
+function norm(plan){plan.forEach(d=>{if(Array.isArray(d.items))d.items=sortT(d.items);});return plan;}
+function save(){norm(DAYS);localStorage.setItem(LOCAL_PLAN_KEY,JSON.stringify(DAYS));localStorage.setItem(LOCAL_ACTUAL_KEY,JSON.stringify(A));}
+function shareUrl(){const p=toB64(JSON.stringify({plan:DAYS,act:A}));return location.href.split('#')[0].split('?')[0]+'#data='+encodeURIComponent(p);}
+function openShare(){document.getElementById('share-url').textContent=shareUrl();document.getElementById('share-panel').classList.add('on');}
+function closeModal(e,id){if(!e||e.target===document.getElementById(id))document.getElementById(id).classList.remove('on');}
+function copyShareUrl(){navigator.clipboard.writeText(document.getElementById('share-url').textContent).then(()=>{showToast('คัดลอกลิงก์เรียบร้อย! 🎉','#CC0001');document.getElementById('share-panel').classList.remove('on');});}
+function showToast(msg,bg='#16a34a'){const t=document.getElementById('toast');t.textContent=msg;t.style.background=bg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2000);}
+function ml(lat,lng){return`<a href="http://maps.google.com/?q=${lat},${lng}" target="_blank" class="mlink">📍 Maps</a>`;}
+function pc(k){
+  const p=PL[k];if(!p)return '';
+  const tags=(p.tags||[]).map(tg=>`<span class="ptag" style="background:#f0f9ff;color:#0369a1;border:0.5px solid #bae6fd">${tg}</span>`).join('');
+  return `<div class="pc"><div class="pn">${p.n}</div><div class="pm">${p.r} · ${p.h}</div>${tags?`<div style="margin:3px 0">${tags}</div>`:''}${ml(p.lat,p.lng)}</div>`;
+}
+
+function renderDayScreen(id){
+  const day=DAYS.find(d=>d.id===id);if(!day)return;
+  const el=document.getElementById('items-'+id);if(!el)return;
+  day.items=sortT(day.items);
+  let h=`<div class="dc" style="border-left:3px solid ${day.col}">
+    <div class="dh" onclick="tog('${day.id}')">
+      <div class="dbg" style="background:${day.col}">${day.lbl}</div>
+      <div><div class="dtit">${day.title}</div>
+      <div class="dm2">${day.date} · ฿${day.items.reduce((s,i)=>s+i.p,0).toLocaleString()} แผน</div></div>
+      <span id="ch-${day.id}" style="font-size:12px;color:#a1a1aa">▾</span>
+    </div><div class="di" id="di-${day.id}" data-open="1">`;
+  if(!day.items.length)h+=`<div style="padding:15px;font-size:11px;color:#a1a1aa;text-align:center">ไม่มีรายการ กด "แก้ไขแผน"</div>`;
+  for(const it of day.items){
+    const cat=CM[it.c]||{l:'',bg:'#f4f4f5',cl:'#555'};
+    const av=A[it.id],hv=av!==undefined&&av!=='';
+    const noteVal=A[it.id+'_n']||'';
+    const diff=hv?Number(av)-it.p:null;
+    const dfh=diff!==null?`<span class="df ${diff<=0?'dok':'dov'}">${diff>0?'+':''}${diff.toLocaleString()}</span>`:'';
+    h+=`<div class="tli"><div class="tlt">${it.t}</div><div class="tlb">
+      <div class="tln">${it.n.replace(/\\n/g,'<br>')}</div>
+      ${it.c?`<span class="cat" style="background:${cat.bg};color:${cat.cl}">${cat.l}</span>`:''}
+      ${it.pl?pc(it.pl):''}
+      <div class="amo"><div class="amo-row">
+        <span class="pl">แผน ฿${it.p.toLocaleString()}</span>
+        <div style="display:flex;align-items:center;gap:4px">
+          <input type="number" class="ai${hv?' hv':''}" placeholder="จ่ายจริง" value="${hv?av:''}" inputmode="numeric" onchange="updA('${it.id}',this.value)" oninput="updA('${it.id}',this.value)" onfocus="this.select()">
+          ${dfh}
+        </div>
+      </div>
+      <input type="text" class="ni" placeholder="✍️ บันทึกเพิ่มเติม..." value="${noteVal}" onchange="updN('${it.id}',this.value)" oninput="updN('${it.id}',this.value)">
+      </div>
+    </div></div>`;
+  }
+  h+='</div></div>';el.innerHTML=h;
+}
+
+function tog(id){const di=document.getElementById('di-'+id),ch=document.getElementById('ch-'+id);if(!di)return;const open=di.dataset.open!=='0';di.dataset.open=open?'0':'1';di.style.display=open?'none':'block';if(ch)ch.textContent=open?'▸':'▾';}
+const _timers={};function debounce(key,fn,delay){clearTimeout(_timers[key]);_timers[key]=setTimeout(fn,delay||600);}
+function updA(id,val){const v=val.trim();if(v==='')delete A[id];else A[id]=Number(v);debounce('a_'+id,function(){save();dash();refreshDays();showToast('บันทึกยอดเงิน ✓','#16a34a');},400);}
+function updN(id,val){const v=val.trim();if(v==='')delete A[id+'_n'];else A[id+'_n']=v;debounce('n_'+id,function(){save();showToast('บันทึกโน้ต ✓','#0284c7');},800);}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function openCatDetail(k){
+  const cat=CG.find(r=>r.k===k);if(!cat)return;
+  let p=0,a=0,n=0,h='';
+  DAYS.forEach(day=>{
+    const rows=day.items.filter(i=>i.c===k);if(!rows.length)return;
+    let dh='',dr=false;
+    rows.forEach(it=>{
+      const hA=A[it.id]!==undefined,av=hA?Number(A[it.id]):0;
+      if(!it.p&&!hA)return;
+      p+=it.p||0;a+=av;if(hA)n++;dr=true;
+      const d=hA?av-(it.p||0):null,nt=A[it.id+'_n'];
+      dh+=`<div class="cat-item"><div class="cat-item-top"><span>${esc(it.n)}</span><strong>${hA?'฿'+av.toLocaleString():'รอกรอก'}</strong></div>
+        <div class="cat-item-sub"><span>${esc(it.t)} · แผน ฿${(it.p||0).toLocaleString()}</span>
+          <span class="${d!==null?(d<=0?'dok':'dov'):'dmt'}" style="padding:1px 5px;border-radius:5px">${d!==null?(d>0?'+':'')+d.toLocaleString():'-'}</span></div>
+        ${nt?`<div class="cat-note">${esc(nt)}</div>`:''}
+      </div>`;
+    });
+    if(dr)h+=`<div class="cat-day">${esc(day.lbl)} · ${esc(day.date)}</div>${dh}`;
+  });
+  const d=a-p;
+  document.getElementById('category-title').textContent=cat.l;
+  document.getElementById('category-summary').textContent=`แผน ฿${p.toLocaleString()} · จ่ายจริง ฿${a.toLocaleString()} · ${d>=0?'เกิน':'ประหยัด'} ฿${Math.abs(d).toLocaleString()} · ${n} รายการ`;
+  document.getElementById('category-items').innerHTML=h||'<div style="font-size:11px;color:#71717a;text-align:center;padding:12px">ไม่มีรายการ</div>';
+  document.getElementById('category-panel').classList.add('on');
+}
+
+function renderPie(ca,tot,n){
+  const box=document.getElementById('expense-pie');if(!box)return;
+  if(!tot){box.innerHTML='<div class="pie-card" style="font-size:11px;color:#71717a;text-align:center">ยังไม่มีข้อมูลรายจ่ายจริง</div>';return;}
+  let s=0;
+  const rows=CG.map(cg=>({cg,v:ca[cg.k]||0})).filter(r=>r.v>0);
+  const grad=rows.map(r=>{const e=s+(r.v/tot*360);const pt=`${r.cg.c} ${s.toFixed(2)}deg ${e.toFixed(2)}deg`;s=e;return pt;}).join(',');
+  const leg=rows.map(r=>{const p=Math.round(r.v/tot*100);return`<div class="pie-row"><span class="pie-dot" style="background:${r.cg.c}"></span><span>${r.cg.l}</span><strong>฿${r.v.toLocaleString()} · ${p}%</strong></div>`;}).join('');
+  box.innerHTML=`<div class="pie-card"><div class="pie-total">รวมจ่ายจริง ฿${tot.toLocaleString()} <span style="font-weight:500;color:#71717a">จาก ${n} รายการ</span></div><div class="pie-wrap"><div class="pie" style="background:conic-gradient(${grad})"></div><div class="pie-legend">${leg}</div></div></div>`;
+}
+
+function dash(){
+  let tp=0,ta=0,fi=0,tot=0;const cp={},ca={};
+  DAYS.forEach(d=>d.items.forEach(it=>{tot++;tp+=it.p;cp[it.c]=(cp[it.c]||0)+it.p;if(A[it.id]!==undefined){fi++;ta+=Number(A[it.id]);ca[it.c]=(ca[it.c]||0)+Number(A[it.id]);}}));
+  const diff=ta-tp;
+  document.getElementById('kp').textContent='฿'+tp.toLocaleString();
+  document.getElementById('ka').textContent='฿'+ta.toLocaleString();
+  document.getElementById('kas').textContent=fi>0?`กรอกแล้ว ${fi} รายการ`:'ยังไม่ได้กรอก';
+  document.getElementById('kn').textContent=fi+'/'+tot;
+  const de=document.getElementById('kd');de.style.color=fi===0?'#d97706':diff<=0?'#16a34a':'#dc2626';de.textContent=fi===0?'–':`${diff>0?'+':''}฿${diff.toLocaleString()}`;
+  let bh='';
+  CG.forEach(cg=>{const p=cp[cg.k]||0,a=ca[cg.k],hA=a!==undefined,d=hA?a-p:null,pct=tp?Math.min(100,Math.round(p/tp*100)):0;
+    bh+=`<div class="brow clickable" onclick="openCatDetail('${cg.k}')"><div class="bic">${cg.l.split(' ')[0]}</div>
+      <div class="bnm">${cg.l.split(' ').slice(1).join(' ')}</div>
+      <div class="bpl">฿${p.toLocaleString()}</div>
+      <div class="bac" style="color:${hA?(d<=0?'#16a34a':'#dc2626'):'#71717a'}">${hA?'฿'+a.toLocaleString():'–'}</div>
+      <div class="bdf ${hA?(d<=0?'dok':'dov'):'dmt'}">${d!==null?(d>0?'+':'')+d.toLocaleString():'รอ'} ›</div>
+    </div><div class="bar-bg"><div class="bar-f" style="width:${pct}%;background:${cg.c}"></div></div>`;
+  });
+  bh+=`<div class="brow tot"><div class="bic">Σ</div><div class="bnm">รวมทั้งหมด</div>
+    <div class="bpl" style="color:#fff">฿${tp.toLocaleString()}</div>
+    <div class="bac" style="color:${fi>0?(diff<=0?'#86efac':'#fca5a5'):'rgba(255,255,255,.4)'}">
+      ${fi>0?'฿'+ta.toLocaleString():'–'}</div>
+    <div class="bdf" style="color:#fff">${fi>0?(diff>0?'+':'')+diff.toLocaleString():'–'}</div>
+  </div>`;
+  document.getElementById('btbl').innerHTML=bh;
+  renderPie(ca,ta,fi);
+  let ph='';
+  DAYS.forEach(d=>{const p=d.items.reduce((s,i)=>s+i.p,0),fi2=d.items.filter(i=>A[i.id]!==undefined),a=fi2.reduce((s,i)=>s+Number(A[i.id]),0),pct=d.items.length?Math.round(fi2.length/d.items.length*100):0;
+    ph+=`<div class="prog"><div class="ph"><span style="font-size:11px;font-weight:600;color:#18181b">${d.lbl} ${d.date}</span><span style="font-size:10px;color:#71717a">${fi2.length>0?'฿'+a.toLocaleString()+' / ':''}฿${p.toLocaleString()} · ${pct}%</span></div><div class="bar-bg" style="margin:0"><div class="bar-f" style="width:${pct}%;background:${d.col}"></div></div></div>`;
+  });
+  document.getElementById('dprog').innerHTML=ph;
+}
+
+let tempItems=[];
+function openEditor(){document.getElementById('editor-panel').classList.add('on');renderEditorItems();}
+function renderEditorItems(){const dayId=document.getElementById('f-day').value;const day=DAYS.find(d=>d.id===dayId);tempItems=day?JSON.parse(JSON.stringify(sortT(day.items))):[];buildEditorHTML();}
+function buildEditorHTML(){
+  const box=document.getElementById('editor-items-list');let h='';
+  tempItems.forEach((it,i)=>{
+    h+=`<div style="background:#fff;border:1px solid #e4e4e7;padding:8px;border-radius:6px;margin-bottom:8px;position:relative;">
+      <button class="del-btn" onclick="delItem(${i})">🗑️</button>
+      <div style="display:grid;grid-template-columns:55px 1fr;gap:6px;margin-bottom:4px;">
+        <input type="text" class="f-input" style="padding:4px" placeholder="เวลา" value="${it.t}">
+        <input type="text" class="f-input" style="padding:4px" placeholder="ชื่อกิจกรรม" value="${it.n}">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+        <select class="f-input" style="padding:4px;font-size:11px">${CG.map(c=>`<option value="${c.k}" ${it.c===c.k?'selected':''}>${c.l}</option>`).join('')}</select>
+        <input type="number" class="f-input" style="padding:4px;text-align:right" placeholder="งบแผน (฿)" value="${it.p}">
+      </div>
+    </div>`;
+  });
+  if(!tempItems.length)h='<div style="text-align:center;color:#71717a;font-size:11px;padding:10px">ไม่มีรายการ</div>';
+  box.innerHTML=h;
+  box.querySelectorAll('div[style*="background:#fff"]').forEach((r,i)=>{
+    const inp=r.querySelectorAll('input,select');
+    inp[0].onchange=e=>tempItems[i].t=e.target.value;inp[1].onchange=e=>tempItems[i].n=e.target.value;inp[2].onchange=e=>tempItems[i].c=e.target.value;inp[3].onchange=e=>tempItems[i].p=Number(e.target.value);
+  });
+}
+function addNewItemRow(){tempItems.push({id:'i'+Date.now().toString().slice(-6),t:'10:00',n:'รายการใหม่',c:'F',p:0,pl:null});buildEditorHTML();}
+function delItem(i){tempItems.splice(i,1);buildEditorHTML();}
+function saveEditorChanges(){
+  const dayId=document.getElementById('f-day').value;const idx=DAYS.findIndex(d=>d.id===dayId);
+  if(idx>-1){DAYS[idx].items=sortT(JSON.parse(JSON.stringify(tempItems)));save();dash();const b=document.getElementById('items-'+dayId);if(b&&b.innerHTML!==''){b.innerHTML='';renderDayScreen(dayId);}showToast('อัปเดตแผนเรียบร้อย! 🎉','#CC0001');document.getElementById('editor-panel').classList.remove('on');}
+}
+
+document.getElementById('tabs').addEventListener('click',e=>{
+  const btn=e.target.closest('.tab');if(!btn)return;
+  const t=btn.dataset.t;
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  btn.classList.add('on');document.getElementById('scr-'+t).classList.add('on');
+  if(t.startsWith('d')){const b=document.getElementById('items-'+t);if(b&&b.innerHTML==='')renderDayScreen(t);}
+  btn.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});window.scrollTo(0,0);
+});
+
+dash();
+</script>
+</body>
+</html>
